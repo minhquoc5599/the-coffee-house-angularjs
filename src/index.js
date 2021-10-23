@@ -1,12 +1,9 @@
-var angular = require('angular');
 
-var hello = require('./app/hello');
+(function () {
+  'use strict';
 
-require('./index.css');
-
-var app = 'app';
-module.exports = app;
-
-angular
-  .module(app, [])
-  .component('app', hello);
+  angular.module('IndexApp', [
+    'ngRoute',
+    'coffeeApp'
+  ]);
+})();

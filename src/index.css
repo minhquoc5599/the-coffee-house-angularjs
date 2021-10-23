@@ -1,3 +1,31 @@
+html{
+  height: 100%;
+}
 body {
   background-color: lightgrey;
+  height: 100%;
+}
+
+.fill{
+  min-height: 100vh;
+}
+
+.form--login{
+  border: 1px solid #ccc;
+  padding: 50px 35px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 2px solid rgb(184, 184, 184);
+  border-radius: 3px;
+}
+
+.btn-login{
+  background-color: #e57905;
+  outline: none;
+  border: none;
+}
+
+.btn-login:hover{
+  position:relative;
+  top: -1px;
 }

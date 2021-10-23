@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "User 1",
+    "gender": "Male",
+    "role": "admin",
+    "phone": "0123456789",
+    "email": "user1@gmail.com",
+    "username": "admin",
+    "password": "admin"
+  },
+  {
+    "id": 2,
+    "name": "User 2",
+    "gender": "Male",
+    "role": "user",
+    "phone": "0223456789",
+    "email": "user2@gmail.com",
+    "username": "user2",
+    "password": "user2"
+  },
+  {
+    "id": 3,
+    "name": "User 3",
+    "gender": "Male",
+    "role": "user",
+    "phone": "0323456789",
+    "email": "user3@gmail.com",
+    "username": "user3",
+    "password": "user3"
+  },
+  {
+    "id": 4,
+    "name": "User 4",
+    "gender": "Male",
+    "role": "user",
+    "phone": "0423456789",
+    "email": "user4@gmail.com",
+    "username": "user4",
+    "password": "user4"
+  },
+  {
+    "id": 5,
+    "name": "User 5",
+    "gender": "Male",
+    "role": "user",
+    "phone": "0523456789",
+    "email": "user5@gmail.com",
+    "username": "user5",
+    "password": "user5"
+  }
+]
