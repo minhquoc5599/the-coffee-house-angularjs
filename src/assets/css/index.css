@@ -1,0 +1,169 @@
+.fill {
+  min-height: 100vh;
+  background-color: lightgrey;
+}
+
+/* form login */
+
+.form-login {
+  border: 1px solid #ccc;
+  padding: 50px 35px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 2px solid rgb(184, 184, 184);
+  border-radius: 3px;
+}
+
+.btn-login {
+  background-color: #e57905;
+  outline: none;
+  border: none;
+}
+
+.btn-login:hover {
+  position: relative;
+  top: -1px;
+}
+
+/* Navbar */
+
+.header__navbar {
+  background-color: #e57905;
+}
+
+.header__navbar-list {
+  margin-right: 20px;
+}
+
+.header__navbar-user {
+  position: relative;
+}
+
+.icon-profile {
+  font-size: 26px;
+  color: #fff;
+}
+
+.header__navbar-user:hover .header__navbar-user-menu {
+  display: block;
+  cursor: pointer;
+}
+
+.header__navbar-user-menu {
+  position: absolute;
+  right: -13px;
+  top: calc(100% + 8px);
+  width: 140px;
+  color: #fff;
+  border: none;
+  display: none;
+}
+
+.header__navbar-user-menu::before {
+  content: "";
+  border-width: 20px 27px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  right: 0;
+  top: -27px;
+  z-index: 1;
+}
+
+.header__navbar-user-link {
+  text-decoration: none !important;
+  color: #000 !important;
+}
+
+.content {
+  margin-top: 56px;
+  height: 100%;
+}
+
+/* Side bar */
+
+.sidebar {
+  height: 100%;
+  width: 60px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-color: rgb(179, 179, 179);
+  overflow-x: hidden;
+  padding-top: 8px;
+}
+
+.sidebar a {
+  padding: 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000;
+  display: block;
+  text-align: center;
+}
+
+.sidebar a:hover {
+  background-color: #888;
+}
+
+.sidebar__item--active {
+  background-color: #888;
+}
+
+/* Management */
+
+.sort-table {
+  cursor: pointer;
+}
+
+.btn-action {
+  display: flex;
+  justify-content: center;
+}
+
+.btn--edit {
+  color: green;
+  border-color: green;
+  margin-right: 2px;
+}
+
+.btn--delete {
+  color: red;
+  border-color: red;
+  margin-left: 2px;
+}
+
+.modal-content {
+  border: 2px solid #e57905;
+}
+
+.modal-header {
+  background-color: #e57905;
+  border: none;
+}
+
+.btn-primary-modal {
+  background-color: #6aa84f;
+  color: #fff;
+  border: 1px solid #7e7e7e
+}
+
+.btn-secondary-modal {
+  background-color: #ddd;
+  border: 1px solid #7e7e7e
+}
+
+/* Pagination */
+
+.pagination__button {
+  width: 23px;
+  height: 23px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination__button-icon {
+  font-size: 12px;
+}

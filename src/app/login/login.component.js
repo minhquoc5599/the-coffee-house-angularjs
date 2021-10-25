@@ -31,7 +31,7 @@
               username: user.username,
               role: user.role
             }));
-            $location.path('/admin/account-mgmt');
+            $location.path('/admin/home');
 
           } else {
             alert('Wrong username and password')

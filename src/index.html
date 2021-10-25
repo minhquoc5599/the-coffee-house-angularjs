@@ -6,25 +6,54 @@
   <title>The Coffe House</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="http://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/the-coffee-house-logo-2.jpg" />
+  <link rel="icon" type="image/png"
+    href="http://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/the-coffee-house-logo-2.jpg" />
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
 
-  <script src="./app/lib/angular-1.8.2/angular.js"></script>
-  <script src="./app/lib/angular-1.8.2/angular-route.js"></script>
   <script src="./index.js"></script>
-  <script src="./app/app.js"></script>
+  <script src="./app/app.module.js"></script>
   <script src="./app/app.config.js"></script>
+  <script src="./app/app.controller.js"></script>
   <script src="./app/login/login.module.js"></script>
   <script src="./app/login/login.component.js"></script>
+  <script src="./app/navbar/navbar.module.js"></script>
+  <script src="./app/navbar/navbar.component.js"></script>
+  <script src="./app/sidebar/sidebar.module.js"></script>
+  <script src="./app/sidebar/sidebar.component.js"></script>
+  <script src="./app/home/home.module.js"></script>
+  <script src="./app/home/home.component.js"></script>
   <script src="./app/account/account.module.js"></script>
   <script src="./app/account/account.component.js"></script>
+
 </head>
 
 <body ng-app="IndexApp">
-  <div ng-view></div>
+  <div ng-controller="coffeeAppController">
+    <!-- Navbar -->
+    <navbar-component ng-if="isLoggedIn()"></navbar-component>
+
+    <!-- Side bar -->
+    <div class="container-fluid content" ng-if="isLoggedIn()">
+      <div class="row">
+        <div class="col-12 col-sm-1 col-md-1">
+          <sidebar-component></sidebar-component>
+        </div>
+        <div class="col-12 col-sm-11 col-md-11">
+          <div ng-view></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login -->
+    <div ng-view ng-if="!isLoggedIn()"></div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

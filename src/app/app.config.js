@@ -2,9 +2,9 @@
 (function () {
   'use strict';
 
-  angular.
-    module('coffeeApp').
-    config(configFunction);
+  angular
+    .module('coffeeApp')
+    .config(configFunction);
 
   configFunction.$inject = ['$routeProvider'];
 
@@ -15,11 +15,21 @@
         resolve: {
           check: function ($location) {
             if (localStorage.getItem('user')) {
-              $location.path('/admin/account-mgmt')
+              $location.path('/admin/home')
             }
           }
         },
         template: '<login-component></login-component>'
+      })
+      .when('/admin/home', {
+        resolve: {
+          check: function ($location) {
+            if (!localStorage.getItem('user')) {
+              $location.path('/admin')
+            }
+          }
+        },
+        template: '<home-component></home-component>'
       })
       .when('/admin/account-mgmt', {
         resolve: {
