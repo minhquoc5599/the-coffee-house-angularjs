@@ -119,6 +119,7 @@
 .btn-action {
   display: flex;
   justify-content: center;
+  border: none !important
 }
 
 .btn--edit {
@@ -166,4 +167,26 @@
 
 .pagination__button-icon {
   font-size: 12px;
+}
+
+/* product management */
+
+.btn--add-size {
+  border: 1px solid #000;
+  border-radius: 2px;
+  background-color: #6aa84f;
+  color: #fff;
+}
+
+.icon-plus {
+  font-size: 20px;
+}
+
+.img-thumbnail{
+  width: 70px;
+  height: 70px;
+}
+
+.size{
+  margin-right: 10px;
 }

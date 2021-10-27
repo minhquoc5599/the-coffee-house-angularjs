@@ -8,9 +8,9 @@
       controller: ('HomeController', HomeController)
     });
 
-  HomeController.$inject = [];
+  HomeController.$inject = ['$scope'];
 
-  function HomeController() {
-
+  function HomeController($scope) {
+    $scope.message = 'Welcome Home'
   }
 })();

@@ -1,0 +1,249 @@
+[
+  {
+    "id": 1,
+    "name": "Caramel Macchiato",
+    "image": "https://minio.thecoffeehouse.com/image/admin/caphe-suada--bacsiu_063797.jpg",
+    "category": "Coffee",
+    "sizes": [
+      {
+        "id": 1,
+        "name": "M",
+        "price": 1232132
+      },
+      {
+        "id": 2,
+        "name": "L",
+        "price": 1232132
+      }
+    ],
+    "description": "Ngon"
+  },
+  {
+    "id": 2,
+    "name": "Cà phê sữa đá",
+    "image": "https://minio.thecoffeehouse.com/image/admin/caphe-suada--bacsiu_063797.jpg",
+    "category": "Coffee",
+    "sizes": [
+      {
+        "id": 1,
+        "name": "M",
+        "price": 1232132
+      },
+      {
+        "id": 2,
+        "name": "L",
+        "price": 1232132
+      }
+    ],
+    "description": "Ngon"
+  },
+  {
+    "id": 3,
+    "name": "Cà phê sữa",
+    "image": "https://minio.thecoffeehouse.com/image/admin/caphe-suada--bacsiu_063797.jpg",
+    "category": "Coffee",
+    "sizes": [
+      {
+        "id": 1,
+        "name": "M",
+        "price": 1232132
+      },
+      {
+        "id": 2,
+        "name": "L",
+        "price": 1232132
+      }
+    ],
+    "description": "Ngon"
+  },
+  {
+    "id": 4,
+    "name": "Sinh tố bơ",
+    "image": "https://minio.thecoffeehouse.com/image/admin/caphe-suada--bacsiu_063797.jpg",
+    "category": "Sinh tố",
+    "sizes": [
+      {
+        "id": 1,
+        "name": "M",
+        "price": 1232132
+      },
+      {
+        "id": 2,
+        "name": "L",
+        "price": 1232132
+      }
+    ],
+    "description": "Ngon"
+  },
+  {
+    "id": 5,
+    "name": "Sinh tố mãn cầu",
+    "image": "https://minio.thecoffeehouse.com/image/admin/caphe-suada--bacsiu_063797.jpg",
+    "category": "Sinh tố",
+    "sizes": [
+      {
+        "id": 1,
+        "name": "M",
+        "price": 1232132
+      },
+      {
+        "id": 2,
+        "name": "L",
+        "price": 1232132
+      }
+    ],
+    "description": "Ngon"
+  },
+  {
+    "id": 6,
+    "name": "Trà đào cam sả",
+    "image": "https://minio.thecoffeehouse.com/image/admin/caphe-suada--bacsiu_063797.jpg",
+    "category": "Trà trái cây",
+    "sizes": [
+      {
+        "id": 1,
+        "name": "M",
+        "price": 1232132
+      },
+      {
+        "id": 2,
+        "name": "L",
+        "price": 1232132
+      }
+    ],
+    "description": "Ngon"
+  },
+  {
+    "id": 7,
+    "name": "Trà phúc bồn tử",
+    "image": "https://minio.thecoffeehouse.com/image/admin/caphe-suada--bacsiu_063797.jpg",
+    "category": "Trà trái cây",
+    "sizes": [
+      {
+        "id": 1,
+        "name": "M",
+        "price": 1232132
+      },
+      {
+        "id": 2,
+        "name": "L",
+        "price": 1232132
+      }
+    ],
+    "description": "Ngon"
+  },
+  {
+    "id": 8,
+    "name": "Trà sữa Oolong",
+    "image": "https://minio.thecoffeehouse.com/image/admin/caphe-suada--bacsiu_063797.jpg",
+    "category": "Trà sữa",
+    "sizes": [
+      {
+        "id": 1,
+        "name": "M",
+        "price": 1232132
+      },
+      {
+        "id": 2,
+        "name": "L",
+        "price": 1232132
+      }
+    ],
+    "description": "Ngon"
+  },
+  {
+    "id": 9,
+    "name": "Hồng trà sữa",
+    "image": "https://minio.thecoffeehouse.com/image/admin/caphe-suada--bacsiu_063797.jpg",
+    "category": "Trà sữa",
+    "sizes": [
+      {
+        "id": 1,
+        "name": "M",
+        "price": 1232132
+      },
+      {
+        "id": 2,
+        "name": "L",
+        "price": 1232132
+      }
+    ],
+    "description": "Ngon"
+  },
+  {
+    "id": 10,
+    "name": "Cookie đá xay",
+    "image": "https://minio.thecoffeehouse.com/image/admin/caphe-suada--bacsiu_063797.jpg",
+    "category": "Đá xay",
+    "sizes": [
+      {
+        "id": 1,
+        "name": "M",
+        "price": 1232132
+      },
+      {
+        "id": 2,
+        "name": "L",
+        "price": 1232132
+      }
+    ],
+    "description": "Ngon"
+  },
+  {
+    "id": 11,
+    "name": "Chocolate đá xay",
+    "image": "https://minio.thecoffeehouse.com/image/admin/caphe-suada--bacsiu_063797.jpg",
+    "category": "Đá xay",
+    "sizes": [
+      {
+        "id": 1,
+        "name": "M",
+        "price": 1232132
+      },
+      {
+        "id": 2,
+        "name": "L",
+        "price": 1232132
+      }
+    ],
+    "description": "Ngon"
+  },
+  {
+    "id": 12,
+    "name": "Trà Matcha latte đá",
+    "image": "https://minio.thecoffeehouse.com/image/admin/caphe-suada--bacsiu_063797.jpg",
+    "category": "Matcha",
+    "sizes": [
+      {
+        "id": 1,
+        "name": "M",
+        "price": 1232132
+      },
+      {
+        "id": 2,
+        "name": "L",
+        "price": 1232132
+      }
+    ],
+    "description": "Ngon"
+  },
+  {
+    "id": 13,
+    "name": "Trà Matcha latte nóng",
+    "image": "https://minio.thecoffeehouse.com/image/admin/caphe-suada--bacsiu_063797.jpg",
+    "category": "Matcha",
+    "sizes": [
+      {
+        "id": 1,
+        "name": "M",
+        "price": 1232132
+      },
+      {
+        "id": 2,
+        "name": "L",
+        "price": 1232132
+      }
+    ],
+    "description": "Ngon"
+  }
+]

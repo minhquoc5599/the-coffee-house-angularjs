@@ -6,9 +6,11 @@
     .module('coffeeApp')
     .config(configFunction);
 
-  configFunction.$inject = ['$routeProvider'];
+  configFunction.$inject = ['$routeProvider', '$locationProvider'];
 
-  function configFunction($routeProvider) {
+  function configFunction($routeProvider,$locationProvider) {
+
+    $locationProvider.html5Mode(true);
 
     $routeProvider
       .when('/admin', {
@@ -40,6 +42,16 @@
           }
         },
         template: '<account-component></account-component>'
+      })
+      .when('/admin/product-mgmt', {
+        resolve: {
+          check: function ($location) {
+            if (!localStorage.getItem('user')) {
+              $location.path('/admin')
+            }
+          }
+        },
+        template: '<product-component></product-component>'
       })
       .otherwise({
         redirectTo: '/admin'

@@ -6,6 +6,7 @@
     'home',
     'navbar',
     'sidebar',
-    'account'
+    'account',
+    'product'
   ]);
 })();

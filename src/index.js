@@ -6,7 +6,6 @@ require('angular-route');
 
   angular.module('IndexApp', [
     'ngRoute',
-    'coffeeApp',
-    'navbar'
+    'coffeeApp'
   ]);
 })();

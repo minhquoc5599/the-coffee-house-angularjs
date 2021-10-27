@@ -50,15 +50,22 @@
     $scope.updateAccount = function () {
       if (Object.keys($scope.cloneAccount).length !== 0) {
         const index = $scope.accounts.findIndex(account => account.id === $scope.cloneAccount.id);
-        $scope.accounts[index] = JSON.parse(JSON.stringify($scope.cloneAccount));
-        $scope.cloneAccount = {};
+        if (index > -1 && index < $scope.accounts.length) {
+          $scope.accounts[index] = JSON.parse(JSON.stringify($scope.cloneAccount));
+        } else {
+          alert('Can not find account');
+        }
       }
     }
 
     // Delete account
     $scope.deleteAccount = function (id) {
       const index = $scope.accounts.findIndex(account => account.id === id);
-      $scope.accounts.splice(index, 1);
+      if (index > -1 && index < $scope.accounts.length) {
+        $scope.accounts.splice(index, 1);
+      } else {
+        alert('Can not find account');
+      }
     }
 
     //Pagination
