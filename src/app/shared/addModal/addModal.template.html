@@ -1,0 +1,76 @@
+<!-- Add modal start -->
+<button type="button" data-toggle="modal" data-target="#add{{type}}" ng-click="resetForm()">Add</button>
+<!-- Add product Modal -->
+<div class="modal fade" id="add{{type}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create {{type}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="resetForm()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <!-- Form add -->
+      <form ng-submit="createItem()" name="formCreateItem">
+        <!-- Modal body add product start -->
+        <div class="modal-body" ng-if="type === 'product'">
+          <div class="form-group row">
+            <label for="inputEmail" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" ng-model="newItem.name" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputRole" class="col-sm-2 col-form-label">Category</label>
+            <div class="col-sm-10">
+              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" ng-model="newItem.category">
+                <option ng-repeat="category in categories" value="{{category.name}}"
+                  ng-selected="{{category.name == newItem.category}}">{{category.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputRole" class="col-sm-2 col-form-label">Attributes</label>
+            <div class="col-sm-10 offset-sm-2 align-items-center mb-2" ng-repeat="productSize in newItem.sizes">
+              <select class="custom-select mr-sm-2 col-sm-5" id="inlineFormCustomSelect" ng-model="productSize.name">
+                <option ng-repeat="size in sizes" value="{{size.name}}" ng-selected="{{size.name == productSize.name}}">
+                  {{size.name}}</option>
+              </select>
+              <input type="number" class="form-control col-sm-5 d-inline" ng-model="productSize.price"
+                placeholder="Price" ng-required="true" required>
+            </div>
+          </div>
+          <!-- Button add size -->
+          <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+              <button class="btn btn--add-size" ng-click="addAttributeRow(newItem)">
+                <i class="fas fa-plus-circle icon-plus"></i>
+                <span class="font-weight-bold">Add</span>
+              </button>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputDescription" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" id="exampleFormControlTextarea1"
+                ng-model="newItem.description"></textarea>
+            </div>
+          </div>
+        </div>
+        <!-- Modal body add product end -->
+
+        <!-- Modal footer add start -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary-modal" data-dismiss="modal"
+            ng-click="resetForm()">Cancel</button>
+          <button type="submit" class="btn btn-primary-modal" ng-disabled="formCreateItem.$invalid">Ok</button>
+        </div>
+        <!-- Modal footer add end -->
+
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Add modal end -->

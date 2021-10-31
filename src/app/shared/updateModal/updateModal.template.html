@@ -1,0 +1,131 @@
+<!-- Update modal start-->
+<button class="btn--edit" type="button" data-toggle="modal" data-target="#update{{item.id}}"
+  ng-click="showItem(item)"><i class="fas fa-edit"></i></button>
+
+<div class="modal fade" id="update{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update {{type}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <!-- Form update -->
+      <form ng-submit="updateItem(newItem)" name="formUpdateItem">
+        <!-- Modal body update account start -->
+        <div class="modal-body" ng-if="type === 'account'">
+          <div class="form-group row">
+            <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" ng-model="newItem.email" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" ng-model="newItem.name" required>
+            </div>
+          </div>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+              <div class="col-sm-10">
+                <div class="form-check-inline">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+                    ng-model="newItem.gender" value="Male" ng-checked="newItem.gender==='Male'">
+                  <label class="form-check-label" for="gridRadios1">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+                    ng-model="newItem.gender" value="Female" ng-checked="newItem.gender==='Female'">
+                  <label class="form-check-label" for="gridRadios1">
+                    Female
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-group row">
+            <label for="inputRole" class="col-sm-2 col-form-label">Role</label>
+            <div class="col-sm-10">
+              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" ng-model="newItem.role">
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+                <option value="saler">Saler</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputPhone" class="col-sm-2 col-form-label">Phone</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" ng-model="newItem.phone" required>
+            </div>
+          </div>
+        </div>
+        <!-- Modal body update account end -->
+
+        <!-- Modal body update product start -->
+        <div class="modal-body" ng-if="type === 'product'">
+          <div class="form-group row">
+            <label for="inputEmail" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" ng-model="newItem.name" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputRole" class="col-sm-2 col-form-label">Category</label>
+            <div class="col-sm-10">
+              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" ng-model="newItem.category">
+                <option ng-repeat="category in categories" value="{{category.name}}"
+                  ng-selected="{{category.name == newItem.category}}">{{category.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputRole" class="col-sm-2 col-form-label">Attributes</label>
+            <div class="col-sm-10 offset-sm-2 align-items-center mb-2" ng-repeat="productSize in newItem.sizes">
+              <select class="custom-select mr-sm-2 col-sm-5" id="inlineFormCustomSelect" ng-model="productSize.name">
+                <option ng-repeat="size in sizes" value="{{size.name}}" ng-selected="{{size.name == productSize.name}}">
+                  {{size.name}}</option>
+              </select>
+              <input type="number" class="form-control col-sm-5 d-inline" ng-model="productSize.price"
+                placeholder="Price" required>
+            </div>
+          </div>
+          <!-- Button add size -->
+          <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+              <button class="btn btn--add-size" ng-click="addAttributeRow(newItem)">
+                <i class="fas fa-plus-circle icon-plus"></i>
+                <span class="font-weight-bold">Add</span>
+              </button>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputDescription" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" id="exampleFormControlTextarea1" ng-model="newItem.description"></textarea>
+            </div>
+          </div>
+        </div>
+        <!-- Modal body update product end -->
+
+        <!-- Modal footer update start -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary-modal" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary-modal" ng-disabled="formUpdateItem.$invalid">Ok</button>
+        </div>
+        <!-- Modal footer update end -->
+
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Update modal end -->

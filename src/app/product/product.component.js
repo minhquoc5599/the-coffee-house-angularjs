@@ -6,8 +6,7 @@
     .component('productComponent', {
       templateUrl: 'app/product/product.template.html',
       controller: ('ProductController', ProductController)
-    })
-    .filter('ProductsFilter', ProductsFilter);
+    });
 
   ProductController.$inject = ['$scope', '$http'];
 
@@ -57,12 +56,6 @@
           function (error) {
             alert('Server error');
           });
-    }
-
-    // Sort
-    $scope.sort = function (keyname) {
-      $scope.sortKey = keyname;
-      $scope.reverse = !$scope.reverse;
     }
 
     //Pagination
@@ -129,20 +122,10 @@
     }
 
     // Add Attribute Size Row
-    $scope.addAtrributeRow = function (product) {
+    $scope.addAttributeRow = function (product) {
       product.sizes.push({
         name: $scope.sizes.length > 0 ? $scope.sizes[0].name : 'S',
       });
-    }
-
-
-  }
-
-  // Filter Pagination
-  function ProductsFilter() {
-    return function (input, start) {
-      start = parseInt(start);
-      return input.slice(start)
     }
   }
 })();

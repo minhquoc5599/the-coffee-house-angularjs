@@ -1,0 +1,88 @@
+<table class="table table-striped table-bordered mt-3">
+  <thead>
+    <!-- Field accounts management start-->
+    <tr ng-if="type==='accounts'">
+      <th scope="col" ng-click="sort('name')" class="sort-table">Name
+        <i ng-show="sortKey==='name'" ng-class="{'fas fa-chevron-up':reverse,'fas fa-chevron-down': !reverse}"></i>
+      </th>
+      <th scope="col" ng-click="sort('gender')" class="sort-table">Gender
+        <i ng-show="sortKey==='gender'" ng-class="{'fas fa-chevron-up':reverse,'fas fa-chevron-down': !reverse}"></i>
+      </th>
+      <th scope="col" ng-click="sort('role')" class="sort-table">Role
+        <i ng-show="sortKey==='role'" ng-class="{'fas fa-chevron-up':reverse,'fas fa-chevron-down': !reverse}"></i>
+      </th>
+      <th scope="col" ng-click="sort('phone')" class="sort-table">Phone
+        <i ng-show="sortKey==='phone'" ng-class="{'fas fa-chevron-up':reverse,'fas fa-chevron-down': !reverse}"></i>
+      </th>
+      <th scope="col" ng-click="sort('email')" class="sort-table">Email
+        <i ng-show="sortKey==='email'" ng-class="{'fas fa-chevron-up':reverse,'fas fa-chevron-down': !reverse}"></i>
+      </th>
+      <th scope="col">Action</th>
+    </tr>
+    <!-- Field accounts management end-->
+
+    <!-- Field products management start-->
+    <tr ng-if="type==='products'">
+      <th scope="col" ng-click="sort('name')" class="sort-table">Name
+        <i ng-show="sortKey==='name'" ng-class="{'fas fa-chevron-up':reverse,'fas fa-chevron-down': !reverse}"></i>
+      </th>
+      <th scope="col" class="sort-table">Image</th>
+      <th scope="col" ng-click="sort('category')" class="sort-table">Category
+        <i ng-show="sortKey==='category'" ng-class="{'fas fa-chevron-up':reverse,'fas fa-chevron-down': !reverse}"></i>
+      </th>
+      <th scope="col" class="sort-table">Size
+      </th>
+      <th scope="col">Action</th>
+    </tr>
+    <!-- Field products management end-->
+
+  </thead>
+  <tbody>
+    <!-- Body accounts management start-->
+    <tr ng-if="type === 'accounts'"
+      ng-repeat="account in tableData | filterApp: (currentPage-1)*pageSize | filter: search | orderBy: sortKey: reverse | limitTo: pageSize">
+      <th scope="row">{{account.name}}</th>
+      <td>{{account.gender}}</td>
+      <td>{{account.role}}</td>
+      <td>{{account.phone}}</td>
+      <td>{{account.email}}</td>
+      <td class="btn-action">
+
+        <!-- Update account start -->
+        <update-modal type="account" item="account" new-item="newItem" show-item="showItem" update-item="updateItem">
+        </update-modal>
+        <!-- Update account end -->
+
+        <!-- Delete account start -->
+        <delete-modal id="account.id" type="account" name="account.name" delete-item="deleteItem">
+        </delete-modal>
+        <!-- Delete account end -->
+
+    </tr>
+    <!-- Body accounts management end-->
+
+    <!-- Body products management start-->
+    <tr ng-if="type === 'products'"
+      ng-repeat="product in tableData | filterApp: (currentPage-1)*pageSize | filter: search | orderBy: sortKey: reverse | limitTo: pageSize">
+      <th scope="row">{{product.name}}</th>
+      <td><img src="{{product.image}}" alt="{{product.name}}" class="img-thumbnail"></td>
+      <td>{{product.category}}</td>
+      <td><span ng-repeat="size in product.sizes" class="size">{{size.name}}</span></td>
+      <td class="btn-action">
+
+        <!-- Update product start -->
+        <update-modal type="product" item="product" new-item="newItem" show-item="showItem" update-item="updateItem"
+          categories="categories" sizes="sizes" add-attribute-row="addAttributeRow"></update-modal>
+        <!-- Update product end -->
+
+        <!-- Delete product start -->
+        <delete-modal id="product.id" name="product.name" type="product" delete-item="deleteItem">
+        </delete-modal>
+        <!-- Delete product end -->
+
+      </td>
+    </tr>
+    <!-- Body products management end-->
+
+  </tbody>
+</table>
