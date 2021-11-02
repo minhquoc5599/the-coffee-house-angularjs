@@ -58,11 +58,30 @@
           });
     }
 
+    // Fields 
+    $scope.fields = [
+      {
+        name: 'name',
+        sorted: true
+      },
+      {
+        name: 'image',
+        sorted: false
+      },
+      {
+        name: 'category',
+        sorted: true
+      },
+      {
+        name: 'sizes',
+        sorted: false
+      }
+    ]
+
     //Pagination
-    $scope.currentPage = 1;
-    $scope.pageSize = 5;
-    $scope.numberOfPages = function () {
-      return Math.ceil($scope.accounts.length / $scope.pageSize);
+    $scope.config = {
+      currentPage: 1,
+      pageSize: 5
     }
 
     // Reset Form

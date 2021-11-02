@@ -34,10 +34,6 @@
             alert('Server error');
           });
     }
-    $scope.sort = function (keyname) {
-      $scope.sortKey = keyname;
-      $scope.reverse = !$scope.reverse;
-    }
 
     // Update account
     $scope.newAccount = {};
@@ -67,11 +63,34 @@
       }
     }
 
+    // Field
+    $scope.fields = [
+      {
+        name: 'name',
+        sorted: true
+      },
+      {
+        name: 'gender',
+        sorted: true
+      },
+      {
+        name: 'role',
+        sorted: true
+      },
+      {
+        name: 'phone',
+        sorted: true
+      },
+      {
+        name: 'email',
+        sorted: true
+      }
+    ]
+
     //Pagination
-    $scope.currentPage = 1;
-    $scope.pageSize = 5;
-    $scope.numberOfPages = function () {
-      return Math.ceil($scope.accounts.length / $scope.pageSize);
+    $scope.config = {
+      currentPage: 1,
+      pageSize: 5
     }
   }
 })();

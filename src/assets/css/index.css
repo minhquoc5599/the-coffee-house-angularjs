@@ -114,6 +114,7 @@
 
 .sort-table {
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 .btn-action {
@@ -156,6 +157,10 @@
 
 /* Pagination */
 
+.pagination {
+  margin: 0;
+}
+
 .pagination__button {
   width: 23px;
   height: 23px;
@@ -182,11 +187,11 @@
   font-size: 20px;
 }
 
-.img-thumbnail{
+.img-thumbnail {
   width: 70px;
   height: 70px;
 }
 
-.size{
+.size {
   margin-right: 10px;
 }

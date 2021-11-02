@@ -10,9 +10,8 @@
       restrict: 'EA',
       templateUrl: 'app/shared/pagination/pagination.template.html',
       scope: {
-        currentPage: '=',
-        length: '=',
-        pageSize: '='
+        config: '=',
+        length: '='
       }
     }
   }

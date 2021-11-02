@@ -10,11 +10,11 @@
       restrict: 'EA',
       templateUrl: 'app/shared/deleteModal/deleteModal.template.html',
       scope: {
-        id: '=',
         type: '@',
-        name: '=',
+        newItem: '=',
 
         // Action
+        showItem: '=',
         deleteItem: '='
       }
     }

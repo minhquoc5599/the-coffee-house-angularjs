@@ -1,7 +1,5 @@
 <!-- Delete modal start-->
-<button class="btn--delete" type="button" data-toggle="modal" data-target="#delete{{id}}"><i
-    class="fas fa-trash-alt"></i></button>
-<div class="modal fade" id="delete{{id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="deleteModal{{newItem.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -12,11 +10,12 @@
         </button>
       </div>
       <div class="modal-body">
-        <h5>Are you sure you want to delete {{type}} {{name}}?</h5>
+        <h5>Are you sure you want to delete {{type}} {{newItem.name}}?</h5>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary-modal" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary-modal" ng-click="deleteItem(id)" data-dismiss="modal">Ok</button>
+        <button type="button" class="btn btn-primary-modal" ng-click="deleteItem(newItem.id)"
+          data-dismiss="modal">Ok</button>
       </div>
     </div>
   </div>

@@ -1,31 +1,24 @@
 <div class="mt-3">
   <a href="/admin/home" style="text-decoration: underline;">Home</a> > <span>Product Management</span>
 </div>
-<div class="mt-3 d-flex justify-content-between">
-  <span style="text-transform: uppercase; ">Product Management</span>
-  <div style="margin: 0">
-    <input type="text" placeholder="Search" ng-model="search">
-
-    <!-- Add product modal start -->
-    <add-modal type="product" reset-form="resetForm" new-item="newProduct" categories="categories" sizes="sizes"
-      add-attribute-row="addAttributeRow" create-item="createProduct">
-    </add-modal>
-    <!-- Add product modal end -->
-
-    <button ng-click="reloadProduct()">
-      <i class="fas fa-sync"></i>
-    </button>
-  </div>
-</div>
-<h1>{{message}}</h1>
 
 <!-- Products table start -->
-<table-app table-data="products" type="products" search="search" current-page="currentPage" page-size="pageSize"
-  delete-item="deleteProduct" show-item="showProduct" update-item="updateProduct" new-item="newProduct"
-  categories="categories" sizes="sizes" add-attribute-row="addAttributeRow"></table-app>
+<table-app fields="fields" table-data="products" config="config" title="product" show-item="showProduct"
+  reload-data="reloadProduct" reset-form="resetForm">
+</table-app>
 <!-- Products table end -->
 
-<div class="d-flex justify-content-between align-items-center">
-  <span>Showing {{pageSize}} items</span>
-  <pagination current-page="currentPage" length="products.length" page-size="pageSize"></pagination>
-</div>
+<!-- Add product start -->
+<add-modal type="product" new-item="newProduct" categories="categories" sizes="sizes"
+  add-attribute-row="addAttributeRow" create-item="createProduct"></add-modal>
+<!-- Add product end -->
+
+<!-- Update product start -->
+<update-modal type="product" new-item="newProduct" show-item="showProduct" update-item="updateProduct"
+  categories="categories" sizes="sizes" add-attribute-row="addAttributeRow"></update-modal>
+<!-- Update product end -->
+
+<!-- Delete product start -->
+<delete-modal new-item="newProduct" type="product" delete-item="deleteProduct">
+</delete-modal>
+<!-- Delete product end -->

@@ -1,7 +1,7 @@
 <!-- Add modal start -->
-<button type="button" data-toggle="modal" data-target="#add{{type}}" ng-click="resetForm()">Add</button>
+
 <!-- Add product Modal -->
-<div class="modal fade" id="add{{type}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="addModal{{type}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -11,7 +11,6 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-
       <!-- Form add -->
       <form ng-submit="createItem()" name="formCreateItem">
         <!-- Modal body add product start -->

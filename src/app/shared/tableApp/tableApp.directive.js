@@ -10,28 +10,26 @@
       restrict: 'EA',
       templateUrl: 'app/shared/tableApp/tableApp.template.html',
       scope: {
+        fields: '=',
         tableData: '=',
         type: '@',
-        currentPage: '=',
-        pageSize: '=',
-        search: '=',
-        newItem: '=',
-        categories: '=',
-        sizes: '=',
+        config: '=',
+        title: '@',
 
         // action
         showItem: '=',
-        updateItem: '=',
-        deleteItem: '=',
-        addAttributeRow: '='
+        reloadData: '=',
+        resetForm: '='
       },
       link: linkFunction
     }
 
     function linkFunction($scope, elem, attrs) {
-      $scope.sort = function (keyname) {
-        $scope.sortKey = keyname;
-        $scope.reverse = !$scope.reverse;
+      $scope.sort = function (keyname, sorted) {
+        if (sorted) {
+          $scope.sortKey = keyname;
+          $scope.reverse = !$scope.reverse;
+        }
       }
     }
   }
