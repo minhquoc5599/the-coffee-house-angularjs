@@ -1,26 +1,26 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "Coffee"
   },
   {
-    "id": 2,
+    "id": "2",
     "name": "Sinh tố"
   },
   {
-    "id": 3,
+    "id": "3",
     "name": "Trà trái cây"
   },
   {
-    "id": 4,
+    "id": "4",
     "name": "Trà sữa"
   },
   {
-    "id": 5,
+    "id": "5",
     "name": "Đá xay"
   },
   {
-    "id": 6,
+    "id": "6",
     "name": "Matcha"
   }
 ]

@@ -8,7 +8,7 @@
   function tableApp() {
     return {
       restrict: 'EA',
-      templateUrl: 'app/shared/tableApp/tableApp.template.html',
+      templateUrl: 'app/shared/directives/tableApp/tableApp.template.html',
       scope: {
         fields: '=',
         tableData: '=',

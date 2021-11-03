@@ -8,7 +8,7 @@
   function updateModal() {
     return {
       restrict: 'EA',
-      templateUrl: 'app/shared/updateModal/updateModal.template.html',
+      templateUrl: 'app/shared/directives/updateModal/updateModal.template.html',
       scope: {
         type: '@',
         newItem: '=',

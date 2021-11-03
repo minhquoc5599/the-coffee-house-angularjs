@@ -8,7 +8,7 @@
   function deleteModal() {
     return {
       restrict: 'EA',
-      templateUrl: 'app/shared/deleteModal/deleteModal.template.html',
+      templateUrl: 'app/shared/directives/deleteModal/deleteModal.template.html',
       scope: {
         type: '@',
         newItem: '=',

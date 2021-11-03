@@ -8,7 +8,7 @@
   function addModal() {
     return {
       restrict: 'EA',
-      templateUrl: 'app/shared/addModal/addModal.template.html',
+      templateUrl: 'app/shared/directives/addModal/addModal.template.html',
       scope: {
         type: '@',
         newItem: '=',

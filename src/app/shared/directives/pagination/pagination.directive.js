@@ -8,7 +8,7 @@
   function pagination() {
     return {
       restrict: 'EA',
-      templateUrl: 'app/shared/pagination/pagination.template.html',
+      templateUrl: 'app/shared/directives/pagination/pagination.template.html',
       scope: {
         config: '=',
         length: '='

@@ -8,54 +8,56 @@
       controller: ('ProductController', ProductController)
     });
 
-  ProductController.$inject = ['$scope', '$http'];
+  ProductController.$inject = ['$scope', 'apiService'];
 
-  function ProductController($scope, $http) {
+  function ProductController($scope, apiService) {
+    const pathProduct = 'https://601924d6971d850017a40c07.mockapi.io/api/products/'
+    const pathCategory = 'https://601924d6971d850017a40c07.mockapi.io/api/categories/'
+    const pathSize = 'https://601924d6971d850017a40c07.mockapi.io/api/sizes/'
 
     // Get product
     $scope.products = [];
-    $http.get('app/data/product.json')
-      .then(
-        function (response) {
-          $scope.products = response.data;
-        },
-        function (error) {
-          alert('Server error');
-        });
+    apiService.get(
+      pathProduct,
+      function (data) {
+        $scope.products = data;
+      }, function () {
+        alert('Sever error');
+      });
 
     // Get category
     $scope.categories = [];
-    $http.get('app/data/category.json')
-      .then(
-        function (response) {
-          $scope.categories = response.data;
-        },
-        function (error) {
-          alert('Server error');
-        });
+    apiService.get(
+      pathCategory,
+      function (data) {
+        $scope.categories = data;
+      }, function () {
+        alert('Server error');
+      }
+    )
 
     // Get size
     $scope.sizes = [];
-    $http.get('app/data/size.json')
-      .then(
-        function (response) {
-          $scope.sizes = response.data;
-        },
-        function (error) {
-          alert('Server error');
-        });
+    apiService.get(
+      pathSize,
+      function (data) {
+        $scope.sizes = data;
+      },
+      function () {
+        alert('Server error');
+      }
+    )
 
 
     // Reload products
     $scope.reloadProduct = function () {
-      $http.get('app/data/product.json')
-        .then(
-          function (response) {
-            $scope.products = response.data;
-          },
-          function (error) {
-            alert('Server error');
-          });
+      apiService.get(
+        pathProduct,
+        function (data) {
+          $scope.products = data;
+        }, function () {
+          alert('Sever error');
+        });
     }
 
     // Fields 
@@ -100,8 +102,13 @@
 
     // Create Product
     $scope.createProduct = function () {
-      $scope.products.push($scope.newProduct);
-      $scope.resetForm();
+      apiService.post(pathProduct, $scope.newProduct, function () {
+        $scope.products.push($scope.newProduct);
+        $scope.resetForm();
+      }, function () {
+        alert('Server error');
+      })
+
     }
 
 
@@ -120,24 +127,34 @@
     }
 
     $scope.updateProduct = function (product) {
-      if (Object.keys(product).length !== 0) {
-        const index = $scope.products.findIndex(item => item.id === product.id);
-        if (index > -1 && index < $scope.products.length) {
-          $scope.products[index] = JSON.parse(JSON.stringify(product));
-        } else {
-          alert('Can not find product');
+      apiService.put(pathProduct, product, function () {
+        if (Object.keys(product).length !== 0) {
+          const index = $scope.products.findIndex(item => item.id === product.id);
+          if (index > -1 && index < $scope.products.length) {
+            $scope.products[index] = JSON.parse(JSON.stringify(product));
+          } else {
+            alert('Can not find product');
+          }
         }
-      }
+      }, function () {
+        alert('Server error');
+      })
+
     }
 
     // Delete Product
     $scope.deleteProduct = function (id) {
-      const index = $scope.products.findIndex(product => product.id === id);
-      if (index > -1 && index < $scope.products.length) {
-        $scope.products.splice(index, 1);
-      } else {
-        alert('Can not find product');
-      }
+      apiService.del(pathProduct, id, function () {
+        const index = $scope.products.findIndex(product => product.id === id);
+        if (index > -1 && index < $scope.products.length) {
+          $scope.products.splice(index, 1);
+        } else {
+          alert('Can not find product');
+        }
+      }, function () {
+        alert('Server error');
+      })
+
     }
 
     // Add Attribute Size Row
