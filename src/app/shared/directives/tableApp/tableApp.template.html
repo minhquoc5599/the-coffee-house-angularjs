@@ -27,7 +27,10 @@
     <!-- Body management start-->
     <tr
       ng-repeat="item in tableData | filterApp: (config.currentPage-1)*config.pageSize | filter: search | orderBy: sortKey: reverse | limitTo: config.pageSize">
-      <td ng-repeat="field in fields">{{item[field.name]}}</td>
+      <td ng-repeat="field in fields">
+        <div ng-if="!field.templateUrl">{{item[field.name]}}</div>
+        <div ng-if="field.templateUrl" ng-include="field.templateUrl"></div>
+      </td>
       <td class="btn-action">
         <button class="btn--edit" type="button" data-toggle="modal" data-target="#updateModal{{item.id}}"
           ng-click="showItem(item)"><i class="fas fa-edit"></i></button>
@@ -36,23 +39,7 @@
           ng-click="showItem(item)"><i class="fas fa-trash-alt"></i></button>
       </td>
     </tr>
-
     <!-- Body management end-->
-
-    <!-- <tr ng-if="type === 'product'"
-      ng-repeat="product in tableData | filterApp: (config.currentPage-1)*config.pageSize | filter: search | orderBy: sortKey: reverse | limitTo: config.pageSize">
-      <th scope="row">{{product.name}}</th>
-      <td><img src="{{product.image}}" alt="{{product.name}}" class="img-thumbnail"></td>
-      <td>{{product.category}}</td>
-      <td><span ng-repeat="size in product.sizes" class="size">{{size.name}}</span></td>
-      <td class="btn-action">
-        <button class="btn--edit" type="button" data-toggle="modal" data-target="#updateModal{{product.id}}"
-          ng-click="showItem(product)"><i class="fas fa-edit"></i></button>
-
-        <button class="btn--delete" type="button" data-toggle="modal" data-target="#deleteModal{{product.id}}"
-          ng-click="showItem(product)"><i class="fas fa-trash-alt"></i></button>
-      </td>
-    </tr> -->
 
   </tbody>
 </table>

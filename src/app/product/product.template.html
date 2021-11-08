@@ -3,22 +3,22 @@
 </div>
 
 <!-- Products table start -->
-<table-app fields="fields" table-data="products" config="config" title="product" show-item="showProduct"
-  reload-data="reloadProduct" reset-form="resetForm">
+<table-app fields="vm.fields" table-data="vm.products" config="vm.config" title="product" show-item="vm.showProduct"
+  reload-data="vm.reloadProduct" reset-form="vm.resetForm">
 </table-app>
 <!-- Products table end -->
 
 <!-- Add product start -->
-<add-modal type="product" new-item="newProduct" categories="categories" sizes="sizes"
-  add-attribute-row="addAttributeRow" create-item="createProduct"></add-modal>
+<add-modal type="product" new-item="vm.newProduct" categories="vm.categories" sizes="vm.sizes"
+  add-attribute-row="vm.addAttributeRow" create-item="vm.createProduct"></add-modal>
 <!-- Add product end -->
 
 <!-- Update product start -->
-<update-modal type="product" new-item="newProduct" show-item="showProduct" update-item="updateProduct"
-  categories="categories" sizes="sizes" add-attribute-row="addAttributeRow"></update-modal>
+<update-modal type="product" new-item="vm.newProduct" show-item="vm.showProduct" update-item="vm.updateProduct"
+  categories="vm.categories" sizes="vm.sizes" add-attribute-row="vm.addAttributeRow"></update-modal>
 <!-- Update product end -->
 
 <!-- Delete product start -->
-<delete-modal new-item="newProduct" type="product" delete-item="deleteProduct">
+<delete-modal new-item="vm.newProduct" type="product" delete-item="vm.deleteProduct">
 </delete-modal>
 <!-- Delete product end -->
