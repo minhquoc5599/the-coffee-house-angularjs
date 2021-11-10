@@ -5,51 +5,12 @@ function ProductController(apiService) {
   const pathSize = 'https://601924d6971d850017a40c07.mockapi.io/api/sizes/'
 
   var vm = this;
-  // Get product
+
   vm.products = [];
-  apiService.get(
-    pathProduct,
-    function (data) {
-      vm.products = data;
-    }, function () {
-      alert('Sever error');
-    });
-
-  // Get category
   vm.categories = [];
-  apiService.get(
-    pathCategory,
-    function (data) {
-      vm.categories = data;
-    }, function () {
-      alert('Server error');
-    }
-  )
-
-  // Get size
   vm.sizes = [];
-  apiService.get(
-    pathSize,
-    function (data) {
-      vm.sizes = data;
-    },
-    function () {
-      alert('Server error');
-    }
-  )
-
-
-  // Reload products
-  vm.reloadProduct = function () {
-    apiService.get(
-      pathProduct,
-      function (data) {
-        vm.products = data;
-      }, function () {
-        alert('Sever error');
-      });
-  }
-
+  vm.newProduct = {}
+  vm.error = '';
   // Fields 
   vm.fields = [
     {
@@ -74,12 +35,56 @@ function ProductController(apiService) {
 
   //Pagination
   vm.config = {
+    type: 'product',
     currentPage: 1,
     pageSize: 5
   }
 
+  // Get product
+  apiService.get(
+    pathProduct,
+    function (data) {
+      vm.products = data;
+    }, function () {
+      alert('Sever error');
+    });
+
+  // Get category
+  apiService.get(
+    pathCategory,
+    function (data) {
+      vm.categories = data;
+    }, function () {
+      alert('Server error');
+    }
+  )
+
+  // Get size
+  apiService.get(
+    pathSize,
+    function (data) {
+      vm.sizes = data;
+    },
+    function () {
+      alert('Server error');
+    }
+  )
+
+
+  // Reload products
+  vm.reloadProduct = function () {
+    apiService.get(
+      pathProduct,
+      function (data) {
+        vm.products = data;
+      }, function () {
+        alert('Sever error');
+      });
+  }
+
+
+
   // Reset Form
-  vm.newProduct = {}
   vm.resetForm = function () {
     vm.newProduct = {
       id: vm.products.length + 1,
@@ -90,6 +95,7 @@ function ProductController(apiService) {
         }
       ],
     }
+    vm.error = '';
   }
 
   // Create Product
@@ -98,9 +104,8 @@ function ProductController(apiService) {
       vm.products.push(vm.newProduct);
       vm.resetForm();
     }, function () {
-      alert('Server error');
+      vm.error = 'Server error';
     })
-
   }
 
 
@@ -116,6 +121,7 @@ function ProductController(apiService) {
         ]
       }
     }
+    vm.error = '';
   }
 
   vm.updateProduct = function (product) {
@@ -124,12 +130,15 @@ function ProductController(apiService) {
         const index = vm.products.findIndex(item => item.id === product.id);
         if (index > -1 && index < vm.products.length) {
           vm.products[index] = JSON.parse(JSON.stringify(product));
+          const modal = '#updateModal' + product.id;
+          vm.error = '';
+          $(modal).modal('hide');
         } else {
-          alert('Can not find product');
+          vm.error = 'Can not find product';
         }
       }
     }, function () {
-      alert('Server error');
+      vm.error = 'Server error';
     })
 
   }
@@ -140,13 +149,15 @@ function ProductController(apiService) {
       const index = vm.products.findIndex(product => product.id === id);
       if (index > -1 && index < vm.products.length) {
         vm.products.splice(index, 1);
+        const modal = '#deleteModal' + id;
+        vm.error = '';
+        $(modal).modal('hide');
       } else {
-        alert('Can not find product');
+        vm.error = 'Can not find product';
       }
     }, function () {
-      alert('Server error');
+      vm.error = 'Server error!';
     })
-
   }
 
   // Add Attribute Size Row

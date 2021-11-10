@@ -3,17 +3,17 @@
 </div>
 
 <!-- Accounts table start -->
-<table-app table-data="vm.accounts" type="account" config="vm.config" show-item="vm.showAccount"
-  reload-data="vm.reloadAccount" title="account" fields="vm.fields">
+<table-app table-data="vm.accounts" config="vm.config" show-item="vm.showAccount"
+  reload-data="vm.reloadAccount" fields="vm.fields">
 </table-app>
 <!-- Accounts table end -->
 
 <!-- Update account start -->
-<update-modal type="account" new-item="vm.newAccount" update-item="vm.updateAccount">
+<update-modal type="account" new-item="vm.newAccount" update-item="vm.updateAccount" error="vm.error">
 </update-modal>
 <!-- Update account end -->
 
 <!-- Delete account start -->
-<delete-modal type="account" new-item="vm.newAccount" delete-item="vm.deleteAccount">
+<delete-modal type="account" new-item="vm.newAccount" delete-item="vm.deleteAccount" error="vm.error">
 </delete-modal>
 <!-- Delete account end -->

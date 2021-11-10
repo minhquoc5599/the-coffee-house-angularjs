@@ -1,9 +1,9 @@
 <div class="mt-3 d-flex justify-content-between">
-  <span style="text-transform: uppercase; ">{{title}} Management</span>
+  <span style="text-transform: uppercase; ">{{config.type}} Management</span>
   <div style="margin: 0">
     <input type="text" placeholder="Search" ng-model="search">
 
-    <button type="button" data-toggle="modal" data-target="#addModal{{title}}" ng-click="resetForm()">Add</button>
+    <button type="button" data-toggle="modal" data-target="#addModal{{config.type}}" ng-click="resetForm()">Add</button>
     <button ng-click="reloadData()">
       <i class="fas fa-sync"></i>
     </button>

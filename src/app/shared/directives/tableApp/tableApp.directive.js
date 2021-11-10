@@ -12,9 +12,7 @@
       scope: {
         fields: '=',
         tableData: '=',
-        type: '@',
         config: '=',
-        title: '@',
 
         // action
         showItem: '=',

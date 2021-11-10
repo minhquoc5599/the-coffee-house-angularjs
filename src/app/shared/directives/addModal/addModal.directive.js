@@ -14,6 +14,7 @@
         newItem: '=',
         categories: '=',
         sizes: '=',
+        error: '=',
 
         // Action
         resetForm: '=',

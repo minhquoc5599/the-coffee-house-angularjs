@@ -12,6 +12,7 @@
       scope: {
         type: '@',
         newItem: '=',
+        error: '=',
 
         // Action
         showItem: '=',
